@@ -36,6 +36,7 @@ public class CircleImage extends AppCompatImageView {
 
     public CircleImage(Context context) {
         super(context);
+        init();
     }
 
     public CircleImage(Context context, @Nullable AttributeSet attrs) {
@@ -81,7 +82,7 @@ public class CircleImage extends AppCompatImageView {
     /**
      * create placeholder drawable
      */
-    private void setDrawable() {
+    private void createDrawable() {
         mDrawable = new Drawable() {
             @Override
             public void draw(@NonNull Canvas canvas) {
@@ -112,9 +113,9 @@ public class CircleImage extends AppCompatImageView {
         };
     }
 
-    private void setValues() {
+    private void fillImages() {
         mPaint.setColor(BLACK);
-        setDrawable();
+        createDrawable();
         Glide.with(getContext())
                 .load(mImageResource)
                 .placeholder(mDrawable)
@@ -146,7 +147,7 @@ public class CircleImage extends AppCompatImageView {
     }
 
     public void showImage() {
-        setValues();
+        fillImages();
     }
 
     private void setBorderCorlor(int color) {
