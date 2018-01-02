@@ -24,7 +24,7 @@ After that,in your activity, we just call **showImage()** to show circle image.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CircleImage image = findViewById(R.id.image_heart);
+        CircleImage image = findViewById(R.id.image_circle);
         image.showImage();
     }
 ```
